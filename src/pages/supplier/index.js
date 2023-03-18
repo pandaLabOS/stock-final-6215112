@@ -11,7 +11,7 @@ export default function SupplierManagement({ returnProps }) {
 
   function deleteSupplier(id, API_URL) {
     
-    fetch(`/api/stock/supplier/${id}`, { method: 'DELETE', headers: { 'Content-Type': 'application/json; charset=UTF-8'  }})
+    fetch(`https://stock-final-6215112.vercel.app/api/stock/supplier/${id}`, { method: 'DELETE', headers: { 'Content-Type': 'application/json; charset=UTF-8'  }})
     .then(res => res.json())
     .then(data => {
         window.location.reload(false);
@@ -60,7 +60,7 @@ export default function SupplierManagement({ returnProps }) {
 
 export async function getServerSideProps() {
     console.log(`API_URL: ${process.env.API_URL}`)
-    const res = await fetch(`${process.env.API_URL}/stock/supplier/`)
+    const res = await fetch("https://stock-final-6215112.vercel.app/api/stock/supplier")
     const suppliers = await res.json()
     const returnProps = [ suppliers, process.env.API_URL ]
 

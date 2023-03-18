@@ -8,7 +8,7 @@ export default function Supplier({ supplier }) {
     const [data, setData] = useState("");
 
     const saveSupplier = async (data) => {
-        const response = await fetch(`/api/stock/supplier/${supplier._id}`, {
+        const response = await fetch(`https://stock-final-6215112.vercel.app/api/stock/supplier/${supplier._id}`, {
             method: "PUT",
             mode: "cors",
             cache: "no-cache",
@@ -77,7 +77,7 @@ export default function Supplier({ supplier }) {
 //STEP 1: Function executed server-side before rendering page ---- Whether you write the function above or below the html section makes no difference
 //params.id == params comes from the file name. If the file name blog_id, then it will be param.blog_id. Basically, param.<fileName>
 export async function getServerSideProps({ params }) {
-    const res = await fetch(`/api/stock/supplier/${params.id}`)
+    const res = await fetch(`https://stock-final-6215112.vercel.app/api/stock/supplier/${params.id}`)
     console.log(`API_URL: ${process.env.API_URL}`)
     const supplier = await res.json()
     return { props: { supplier } }
