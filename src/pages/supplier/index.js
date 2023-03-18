@@ -59,9 +59,9 @@ export default function SupplierManagement({ returnProps }) {
 }
 
 export async function getServerSideProps() {
+    console.log(`API_URL: ${process.env.API_URL}`)
     const res = await fetch(`${process.env.API_URL}/stock/supplier/`)
     const suppliers = await res.json()
-    console.log(`API_URL: ${process.env.API_URL}`)
     const returnProps = [ suppliers, process.env.API_URL ]
 
     return { props: { returnProps } }
