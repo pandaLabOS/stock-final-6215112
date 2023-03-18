@@ -30,3 +30,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+INSERT_stock-app-next.mongodb
+INSERT.mongodb
+public/data/suppliers.json
