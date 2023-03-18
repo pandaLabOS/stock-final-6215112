@@ -42,7 +42,7 @@ export default function Supplier({ supplier }) {
                 <div class="form-group">
                     <h3>Personal Information</h3>
                     <label htmlFor = "first_name">First Name</label><br/>
-                    <input class = "text-input" id = "first_name" {...register("first_name")} placeholder = "First name" class="form-control" defaultValue = {supplier.first_name}/><br/>
+                    <input class = "text-input form-control" id = "first_name" {...register("first_name")} placeholder = "First name" defaultValue = {supplier.first_name}/><br/>
                 
                     <label htmlFor = "last_name">Last Name</label><br/>
                     <input id = "last_name" {...register("last_name")} placeholder = "Last name" class="form-control" defaultValue = {supplier.last_name}/><br/>

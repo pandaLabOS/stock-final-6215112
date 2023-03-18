@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Head from 'next/head'
 import Link from 'next/link'
 
-export default function addSupplier() {
+export default function AddSupplier() {
     const {register, handleSubmit, watch, formState: { errors } } = useForm(); //handleSubmit is a tool provided by the react-hook-form hook
     const [data, setData] = useState("");
 
@@ -34,7 +34,7 @@ export default function addSupplier() {
                 <div class="form-group">
                     <h3>Personal Information</h3>
                     <label htmlFor = "first_name">First Name</label><br/>
-                    <input class = "text-input" id = "first_name" name = "firstName" {...register('first_name', {required: 'This field is required'})} placeholder = "First name" class="form-control" required/><br/>
+                    <input class = "form-control text-input" id = "first_name" name = "firstName" {...register('first_name', {required: 'This field is required'})} placeholder = "First name" required/><br/>
                     <span> {errors.firstName && errors.firstName.message}</span>
 
                     <label htmlFor = "last_name">Last Name</label><br/>
