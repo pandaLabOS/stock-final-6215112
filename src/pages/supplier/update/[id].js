@@ -64,9 +64,7 @@ export default function Supplier({ supplier }) {
                         <p>Back</p>
                     </Link>
                     <br/><br/>
-                    <Link href = "/supplier" style = {{textDecoration: "none", color: "var(--blue)"}}>
-                        <input type="submit" class = "submit" value = "Save"/>
-                    </Link>
+                    <input type="submit" class = "submit" value = "Save"/>
                 </div>
             </form>
             
