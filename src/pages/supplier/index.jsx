@@ -7,10 +7,11 @@ import 'src/styles/Button.module.css';
 export default function SupplierManagement({ returnProps }) {
   const suppliers = returnProps[0]
   const API_URL = returnProps[1]
+  console.log(`API_URL: ${API_URL}`)
 
   function deleteSupplier(id, API_URL) {
     
-    fetch(`${API_URL}/stock/supplier/${id}`, { method: 'DELETE', headers: { 'Content-Type': 'application/json; charset=UTF-8'  }})
+    fetch(`/api/stock/supplier/${id}`, { method: 'DELETE', headers: { 'Content-Type': 'application/json; charset=UTF-8'  }})
     .then(res => res.json())
     .then(data => {
         window.location.reload(false);
@@ -60,6 +61,7 @@ export default function SupplierManagement({ returnProps }) {
 export async function getServerSideProps() {
     const res = await fetch(`${process.env.API_URL}/stock/supplier/`)
     const suppliers = await res.json()
+    console.log(`API_URL: ${process.env.API_URL}`)
     const returnProps = [ suppliers, process.env.API_URL ]
 
     return { props: { returnProps } }

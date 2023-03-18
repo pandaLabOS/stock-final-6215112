@@ -38,7 +38,7 @@ export default function Supplier({ supplier }) {
             </Head>
             <form onSubmit = {handleSubmit(saveSupplier)} style = {{padding: "1rem", width: "30rem"}}>
                 <h3>Update Supplier Information</h3>
-                <hr class="solid"/><br/>
+                <hr className="solid"/><br/>
                 <div class="form-group">
                     <h3>Personal Information</h3>
                     <label htmlFor = "first_name">First Name</label><br/>
@@ -77,7 +77,8 @@ export default function Supplier({ supplier }) {
 //STEP 1: Function executed server-side before rendering page ---- Whether you write the function above or below the html section makes no difference
 //params.id == params comes from the file name. If the file name blog_id, then it will be param.blog_id. Basically, param.<fileName>
 export async function getServerSideProps({ params }) {
-    const res = await fetch(`${process.env.API_URL}/stock/supplier/${params.id}`)
+    const res = await fetch(`api/stock/supplier/${params.id}`)
+    console.log(`API_URL: ${process.env.API_URL}`)
     const supplier = await res.json()
     return { props: { supplier } }
 }

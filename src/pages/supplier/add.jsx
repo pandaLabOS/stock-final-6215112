@@ -30,7 +30,7 @@ export default function AddSupplier() {
             </Head>
             <form onSubmit = {handleSubmit(saveSupplier)} style = {{padding: "1rem", width: "30rem"}}>
                 <h3>Add New Supplier</h3>
-                <hr class="solid"/><br/>
+                <hr className="solid"/><br/>
                 <div class="form-group">
                     <h3>Personal Information</h3>
                     <label htmlFor = "first_name">First Name</label><br/>
