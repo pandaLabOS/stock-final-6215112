@@ -58,10 +58,11 @@ export default function AddSupplier() {
                         <p>Back</p>
                     </Link>
                     <br/><br/>
-                    <Link href = "/supplier" style = {{textDecoration: "none", color: "var(--blue)"}}>
+                    {/* <Link href = "/supplier" style = {{textDecoration: "none", color: "var(--blue)"}}> */}
                         <input type="submit" class = "submit" value = "Save"/>
-                    </Link>                
+                    {/* </Link>                 */}
                 </div>
+                <p>{data}</p>
                 
             </form>
             

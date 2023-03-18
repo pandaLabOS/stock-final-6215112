@@ -8,7 +8,7 @@ export default function Supplier({ supplier }) {
     const [data, setData] = useState("");
 
     const saveSupplier = async (data) => {
-        const response = await fetch(`https://stock-final-6215112.vercel.app/api/stock/supplier/${supplier._id}`, {
+        const response = await fetch(`/api/stock/supplier/${supplier._id}`, {
             method: "PUT",
             mode: "cors",
             cache: "no-cache",
@@ -27,7 +27,7 @@ export default function Supplier({ supplier }) {
     if (!supplier) return (
         <div>
             <p>Supplier not found</p>
-            <Link href = "/supplier/manage">Back</Link>
+            <Link href = "/supplier">Back</Link>
         </div>
     )
 
@@ -64,10 +64,12 @@ export default function Supplier({ supplier }) {
                         <p>Back</p>
                     </Link>
                     <br/><br/>
-                    <Link href = "/supplier" style = {{textDecoration: "none", color: "var(--blue)"}}>
+                    {/* <Link href = "/supplier" style = {{textDecoration: "none", color: "var(--blue)"}}> */}
                         <input type="submit" class = "submit" value = "Save"/>
-                    </Link>
+                    {/* </Link> */}
                 </div>
+                <p>{supplier._id}</p>
+                <p>{data}</p>
             </form>
             
         </div>
@@ -78,7 +80,6 @@ export default function Supplier({ supplier }) {
 //params.id == params comes from the file name. If the file name blog_id, then it will be param.blog_id. Basically, param.<fileName>
 export async function getServerSideProps({ params }) {
     const res = await fetch(`https://stock-final-6215112.vercel.app/api/stock/supplier/${params.id}`)
-    console.log(`API_URL: ${process.env.API_URL}`)
     const supplier = await res.json()
     return { props: { supplier } }
 }

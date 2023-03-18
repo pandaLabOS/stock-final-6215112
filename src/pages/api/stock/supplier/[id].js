@@ -17,6 +17,7 @@ export default async function handler(req, res) {
     }
     
     else if (req.method === 'POST') { //CREATE
+        console.log(`req.body: ${req.body}`)
         const doc = await Supplier.create(req.body)
         res.status(201).json(doc)
     } 
