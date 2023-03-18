@@ -64,12 +64,10 @@ export default function Supplier({ supplier }) {
                         <p>Back</p>
                     </Link>
                     <br/><br/>
-                    {/* <Link href = "/supplier" style = {{textDecoration: "none", color: "var(--blue)"}}> */}
+                    <Link href = "/supplier" style = {{textDecoration: "none", color: "var(--blue)"}}>
                         <input type="submit" class = "submit" value = "Save"/>
-                    {/* </Link> */}
+                    </Link>
                 </div>
-                <p>{supplier._id}</p>
-                <p>{data}</p>
             </form>
             
         </div>
